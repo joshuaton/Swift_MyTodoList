@@ -36,7 +36,6 @@ class SecondViewController: UIViewController , UITextViewDelegate{
         
         let vc : FirstViewController = self.tabBarController!.viewControllers![0] as! FirstViewController
         vc.reloadData()
-        NSLog("todo items: %d", todoManager.todos.count)
     }
     /*
     // MARK: - Navigation

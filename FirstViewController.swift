@@ -15,8 +15,6 @@ class FirstViewController: UIViewController , UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        todoManager.addTask("hehe", desc:"haha")
-        todoManager.addTask("11", desc:"22")
 
 
         // Do any additional setup after loading the view.
@@ -28,21 +26,23 @@ class FirstViewController: UIViewController , UITableViewDataSource, UITableView
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return todoManager.todos.count;
+        return todoManager.getTaskCount();
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell : UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Default")
         
-        cell.textLabel?.text = todoManager.todos[indexPath.row].name
-        cell.detailTextLabel?.text = todoManager.todos[indexPath.row].desc
+        let rows : [todo] = todoManager.queryAllTask()
+        
+        cell.textLabel?.text = rows[indexPath.row].name
+        cell.detailTextLabel?.text = rows[indexPath.row].desc
         
         return cell
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if(editingStyle == UITableViewCellEditingStyle.Delete){
-            todoManager.todos.removeAtIndex(indexPath.row)
+            todoManager.deleteTask(indexPath.row)
         }
         
         todoTableView.reloadData()

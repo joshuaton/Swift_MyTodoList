@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Add-->
+        <!--添加-->
         <scene sceneID="c2r-VB-1P7">
             <objects>
-                <viewController id="Ktb-8S-WmI" customClass="SecondViewController" customModule="FirstSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ktb-8S-WmI" customClass="SecondViewController" customModule="TodoList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5BB-Oy-Jf8"/>
                         <viewControllerLayoutGuide type="bottom" id="juz-vw-1pd"/>
@@ -65,7 +65,7 @@
                             <constraint firstItem="AgS-hV-oLe" firstAttribute="top" secondItem="lBN-64-WiB" secondAttribute="bottom" constant="37" id="xLg-rg-QkE"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Add" id="Fwk-Ra-CAz"/>
+                    <tabBarItem key="tabBarItem" title="添加" image="add_to_list.png" id="Fwk-Ra-CAz"/>
                     <connections>
                         <outlet property="descText" destination="lBN-64-WiB" id="Zpl-Oj-1zD"/>
                         <outlet property="todoText" destination="CXN-LE-maC" id="RTz-Ug-RZz"/>
@@ -75,10 +75,10 @@
             </objects>
             <point key="canvasLocation" x="577" y="525"/>
         </scene>
-        <!--ToDo-->
+        <!--列表-->
         <scene sceneID="xQL-CB-7Oa">
             <objects>
-                <viewController id="RgR-64-dfz" customClass="FirstViewController" customModule="FirstSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RgR-64-dfz" customClass="FirstViewController" customModule="TodoList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="avR-pM-gyi"/>
                         <viewControllerLayoutGuide type="bottom" id="fG1-Ku-KWu"/>
@@ -104,7 +104,7 @@
                             <constraint firstItem="lVO-ks-1OU" firstAttribute="leading" secondItem="yr8-df-cna" secondAttribute="leading" id="r8d-BI-2Yc"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="ToDo" id="aSa-OX-XRf"/>
+                    <tabBarItem key="tabBarItem" title="列表" image="bullet_list.png" id="aSa-OX-XRf"/>
                     <connections>
                         <outlet property="todoTableView" destination="lVO-ks-1OU" id="RrT-g5-jzH"/>
                     </connections>
@@ -132,4 +132,8 @@
             <point key="canvasLocation" x="-243" y="195"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add_to_list.png" width="30" height="30"/>
+        <image name="bullet_list.png" width="30" height="30"/>
+    </resources>
 </document>
