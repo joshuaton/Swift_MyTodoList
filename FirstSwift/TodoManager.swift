@@ -61,6 +61,7 @@ class TodoManager: NSObject {
         for item in db!.prepare(items){
             result.append(todo(id: item[id], name: item[title], desc: item[subTitle]))
         }
+        NSLog("queryAllTask result count:%d", result.count)
         return result
         
     }

@@ -34,8 +34,9 @@ class SecondViewController: UIViewController , UITextViewDelegate{
         descText.text = "";
         self.tabBarController?.selectedIndex = 0
         
-        let vc : FirstViewController = self.tabBarController!.viewControllers![0] as! FirstViewController
-        vc.reloadData()
+        let vc : UINavigationController = self.tabBarController!.viewControllers![0] as! UINavigationController
+        let firstViewController : FirstViewController = vc.viewControllers[0] as! FirstViewController
+        firstViewController.reloadData()
     }
     /*
     // MARK: - Navigation

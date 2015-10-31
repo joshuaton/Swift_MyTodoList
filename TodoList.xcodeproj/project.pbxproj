@@ -18,6 +18,8 @@
 		FB1164CC1BDB8FAC00B05D51 /* TodoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1164CB1BDB8FAC00B05D51 /* TodoManager.swift */; settings = {ASSET_TAGS = (); }; };
 		FB4DAAA01BE462EB00B199BE /* add_to_list.png in Resources */ = {isa = PBXBuildFile; fileRef = FB4DAA9E1BE462EB00B199BE /* add_to_list.png */; settings = {ASSET_TAGS = (); }; };
 		FB4DAAA11BE462EB00B199BE /* bullet_list.png in Resources */ = {isa = PBXBuildFile; fileRef = FB4DAA9F1BE462EB00B199BE /* bullet_list.png */; settings = {ASSET_TAGS = (); }; };
+		FBE3297C1BE5094F00F74564 /* FeedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3297B1BE5094F00F74564 /* FeedsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		FBE3297E1BE5134000F74564 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3297D1BE5134000F74564 /* ViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		FBFE9D681BE4B8650034A720 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFE9D671BE4B8650034A720 /* Util.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,8 @@
 		FB1164CB1BDB8FAC00B05D51 /* TodoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoManager.swift; sourceTree = "<group>"; };
 		FB4DAA9E1BE462EB00B199BE /* add_to_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add_to_list.png; path = assets/add_to_list.png; sourceTree = "<group>"; };
 		FB4DAA9F1BE462EB00B199BE /* bullet_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bullet_list.png; path = assets/bullet_list.png; sourceTree = "<group>"; };
+		FBE3297B1BE5094F00F74564 /* FeedsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedsViewController.swift; sourceTree = "<group>"; };
+		FBE3297D1BE5134000F74564 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FBFE9D671BE4B8650034A720 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,6 +188,8 @@
 			children = (
 				FB1164C71BDB8D7600B05D51 /* FirstViewController.swift */,
 				FB1164C91BDB8D9D00B05D51 /* SecondViewController.swift */,
+				FBE3297B1BE5094F00F74564 /* FeedsViewController.swift */,
+				FBE3297D1BE5134000F74564 /* ViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -378,9 +384,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBE3297C1BE5094F00F74564 /* FeedsViewController.swift in Sources */,
 				FB1164CC1BDB8FAC00B05D51 /* TodoManager.swift in Sources */,
 				FB1164CA1BDB8D9D00B05D51 /* SecondViewController.swift in Sources */,
 				FBFE9D681BE4B8650034A720 /* Util.swift in Sources */,
+				FBE3297E1BE5134000F74564 /* ViewController.swift in Sources */,
 				FB1164C81BDB8D7600B05D51 /* FirstViewController.swift in Sources */,
 				FB1164981BDB8AA800B05D51 /* AppDelegate.swift in Sources */,
 			);

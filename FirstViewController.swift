@@ -8,10 +8,18 @@
 
 import UIKit
 
-class FirstViewController: UIViewController , UITableViewDataSource, UITableViewDelegate{
+class FirstViewController: ViewController , UITableViewDataSource, UITableViewDelegate{
     
     @IBOutlet weak var todoTableView: UITableView!
-
+    
+    var todos : [todo] = []
+    
+    override init(_ coder: NSCoder? = nil) {
+        self.todos = todoManager.queryAllTask()
+        
+        super.init(coder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,17 +33,19 @@ class FirstViewController: UIViewController , UITableViewDataSource, UITableView
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return todoManager.getTaskCount();
+        NSLog("count: %d", self.todos.count)
+        return self.todos.count;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell : UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Default")
         
-        let rows : [todo] = todoManager.queryAllTask()
         
-        cell.textLabel?.text = rows[indexPath.row].name
-        cell.detailTextLabel?.text = rows[indexPath.row].desc
+        cell.textLabel?.text = self.todos[indexPath.row].name
+        cell.detailTextLabel?.text = self.todos[indexPath.row].desc
         
         return cell
     }
@@ -44,13 +54,21 @@ class FirstViewController: UIViewController , UITableViewDataSource, UITableView
         if(editingStyle == UITableViewCellEditingStyle.Delete){
             todoManager.deleteTask(indexPath.row)
         }
-        
-        todoTableView.reloadData()
+        reloadData()
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let destination : FeedsViewController = storyboard.instantiateViewControllerWithIdentifier("FeedsViewController") as! FeedsViewController
+        destination.rssURL = self.todos[indexPath.row].name
+        navigationController?.pushViewController(destination, animated: true)
     }
     
     func reloadData(){
+        self.todos = todoManager.queryAllTask()
         todoTableView.reloadData()
     }
+    
     
     
     
